@@ -26,24 +26,6 @@ const Display = function(canvas) {
         this.context.imageSmoothingEnabled = false;
     
     };
-/*
-    this.roundRect = function (x, y, width, height, radius) {
-        if (width < 2 * radius) radius = width / 2;
-        if (height < 2 * radius) radius = height / 2;
-        this.buffer.beginPath();
-        this.buffer.moveTo(x + radius, y);
-        this.buffer.arcTo(x + width, y, x + width, y + height, radius);
-        this.buffer.arcTo(x + width, y + height, x, y + height, radius);
-        this.buffer.arcTo(x, y + height, x, y, radius);
-        this.buffer.arcTo(x, y, x + width, y, radius);
-        this.buffer.closePath();
-        this.buffer.fillStyle = "rgba(85, 95, 140,0.3)";
-        this.buffer.strokeStyle = "rgb(209, 141, 170)"
-        this.buffer.lineWidth = 5;
-        this.buffer.fill();
-        this.buffer.stroke();
-    };
-    */
 
     this.fill = function(image) { 
         this.buffer.drawImage(image,0,0);
@@ -60,7 +42,8 @@ const Display = function(canvas) {
 
 Display.prototype = {
     constructor: Display,
-    render:function() { 
+    render:function(fade) {
+        this.context.globalAlpha = fade;
         this.context.drawImage(this.buffer.canvas, 0, 0, this.buffer.canvas.width, this.buffer.canvas.height, 0, 0, this.context.canvas.width, this.context.canvas.height);
     },
 };

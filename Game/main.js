@@ -17,8 +17,6 @@ var home                = new Image();
 home.src                = "assets/home.png";
 var flower              = new Image();
 flower.src              = "assets/flower.png";
-var enter              = new Image();
-enter.src              = "assets/enter.png";
 
 window.addEventListener("load", function() {
     "use strict";
@@ -92,7 +90,6 @@ window.addEventListener("load", function() {
         }
 
         if (game.world.player.x > 700 && game.world.player.x < 1050 && game.world.player.y == 450) {
-            //display.drawObject(enter,0,0,470,450,830,650,100,75);
             display.showText("Press ENTER to see some of my work.", game.world.width / 2, 1000,"black","3.75vmin pixelText");
         } else if (game.world.player.x > 1100 && game.world.player.x < 1500 && game.world.player.y == 250) {
             display.showText("Press ENTER to get in touch!", game.world.width / 2, 1000,"black","3.75vmin pixelText");
@@ -100,13 +97,9 @@ window.addEventListener("load", function() {
             display.showText("Use the portals to navigate the website!", game.world.width / 2, 1000,"black","3.75vmin pixelText");
         } else if (game.world.player.x > 1300) {
             display.showText("Go home? (Press ENTER)", game.world.width / 2, 1000,"black","3.75vmin pixelText");
-            //display.drawObject(enter)
         }
 
-        
-        
-
-        display.render();
+        display.render(game.world.fade);
     };
 
     var update = function() {

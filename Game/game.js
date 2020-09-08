@@ -24,6 +24,8 @@ Game.World = function(friction = 0.85, gravity = 6) {
 
     this.height   = 1080;
     this.width    = 1920;
+
+    this.fade = 0;
 };
 
 Game.World.prototype = {
@@ -31,7 +33,13 @@ Game.World.prototype = {
 
     update:function() {
         this.player.updatePosition(this.gravity, this.friction);
-        this.player.updateAnimation();
+        if (this.fade < 0.15) {
+            this.fade += 0.0025;
+        } else {
+            this.fade = 1;
+            this.player.updateAnimation();
+        }
+        
         this.collideObject(this.player);
     },
 
@@ -60,7 +68,7 @@ Game.World.prototype = {
 };
 
 Game.Player = function(x,y) {
-    Game.Animator.call(this, Game.Player.prototype.frame_sets["idle-left"], 10);
+    Game.Animator.call(this, Game.Player.prototype.frame_sets["idle-right"], 10);
 
     this.jumping = true;
     this.hasMoved = false;
@@ -113,11 +121,11 @@ Game.Player.prototype = {
 
     navigate: function() {
         if (this.x > 700 && this.x < 1050 && this.y == 450) {
-            window.location.href="About.html";
+            window.location.href="../about/About.html";
         } else if (this.x > 1100 && this.x < 1500 && this.y == 250) {
-            window.location.href="Contact.html";
+            window.location.href="../contact/Contact.html";
         } else if (this.x > 1300) {
-            window.location.href="Home.html";
+            window.location.href="../index.html";
         }
     },
 
@@ -212,7 +220,7 @@ Game.TileSet = function(columns, tile_size) {
   
     let f = Game.TileSet.Frame;
   
-    this.frames = [new f(0, 0, 32, 32, 0, -2),new f(32, 0, 32, 32, 0, -2),new f(64, 0, 32, 32, 0, -2),new f(96, 0, 32, 32, 0, -2),new f(128, 0, 32, 32, 0, -2),new f(160, 0, 32, 32, 0, -2),new f(192, 0, 32, 32, 0, -2),new f(224, 0, 32, 32, 0, -2),new f(256, 0, 32, 32, 0, -2),
+    this.frames = [new f(0, 0, 32, 32, 0, 0),new f(32, 0, 32, 32, 0, -2),new f(64, 0, 32, 32, 0, -2),new f(96, 0, 32, 32, 0, -2),new f(128, 0, 32, 32, 0, -2),new f(160, 0, 32, 32, 0, -2),new f(192, 0, 32, 32, 0, -2),new f(224, 0, 32, 32, 0, -2),new f(256, 0, 32, 32, 0, -2),
                    new f(288, 0, 32, 32, 0, -2),new f(320, 0, 32, 32, 0, -2),new f(352, 0, 32, 32, 0, -2),new f(384, 0, 32, 32, 0, -2),new f(416, 0, 32, 32, 0, -2),new f(448, 0, 32, 32, 0, -2),
                    new f(480, 0, 32, 32, 0, -2),
                    new f(864, 0, 32, 32, 0, -2),new f(832, 0, 32, 32, 0, -2),new f(800, 0, 32, 32, 0, -2),new f(768, 0, 32, 32, 0, -2),new f(736, 0, 32, 32, 0, -2),new f(704, 0, 32, 32, 0, -2),new f(672, 0, 32, 32, 0, -2),new f(640, 0, 32, 32, 0, -2),new f(608, 0, 32, 32, 0, -2),

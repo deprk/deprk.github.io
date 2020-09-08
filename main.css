@@ -1,0 +1,76 @@
+@font-face {
+    src: url(home-assets/HyliaSerifBeta-Regular.otf);
+    font-family: pixelText;
+}
+
+@font-face {
+    src: url(Game/assets/joystix.ttf);
+    font-family: gameover;
+}
+
+* { box-sizing: border-box; margin:0; padding:0; }
+
+html { height:100%; width:100%; }
+
+body {
+    align-content: center;
+    align-items: space-around;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: grid;
+    justify-items: center;
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+
+canvas { 
+    position: absolute;
+}
+
+#overlay1 {
+    position: absolute;
+    font-family: 'pixelText'
+}
+#overlay2 {
+    position: absolute;
+    font-family: 'pixelText'
+}
+
+.start-btn{ 
+    position: absolute;
+    font-family: 'gameover';
+    background-color: transparent;
+    border: none;
+	margin: 30px auto 0;
+	display: block;
+	font-size: 20px;
+	outline: none;
+	position: absolute;
+	padding: 10px;
+}
+
+button:before {
+	content: '';
+	border-bottom: 0.5vh solid #000;
+	padding: 0 10px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	width: 0;
+	transition: 0.3s;
+}
+
+button:hover:before {
+	width: 100%;
+    padding: 0;
+    border-bottom-color:rgba(255, 255, 255, 0.8);
+}
+
+button:hover {
+    color: rgba(255, 255, 255, 0.8); 
+}
+
+

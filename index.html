@@ -4,16 +4,31 @@
     <head>
         <meta charset="UTF-8">
         <meta name = "viewport" content = "user-scalable=no,width=device-width">
-        <link href = "personal.css" rel = "stylesheet" type = "text/css">
-        <title>George Zhang | About Me </title>
+        <title>George Zhang | Home</title>
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <link rel="stylesheet" href="main.css"/>
+        <link rel="stylesheet" href=""/>
     </head>
 
     <body>
-        <canvas></canvas>
-        <script src = "engine.js"></script>
-        <script src = "game.js"></script>
-        <script src = "display.js"></script>
-        <script src = "main.js"></script>
-        <script src = "controller.js"></script>
+            <canvas></canvas>
+            <script src = "home-assets/main.js"></script>
+
+            <h1 id = "overlay1">Welcome! My name is</h1>
+            <h2 id = "overlay2">George Zhang</h2>
+
+            <button class='start-btn' id='play' onclick="window.location.href='Game/index.html';">PLAY</button>
+            <button class='start-btn' id='credits'>ABOUT</button>
+
+            <script>
+                ScrollReveal().debug = true;
+                ScrollReveal().destroy();
+                ScrollReveal().reveal('#overlay1', {delay: 100, duration: 1000});
+                ScrollReveal().reveal('#overlay2', {delay: 900, duration: 1000});
+                ScrollReveal().reveal('.start-btn', {delay: 1500, duration: 1300, reset:true});
+            </script>
     </body>
+
 </html>
+
+<!DOCTYPE HTML>

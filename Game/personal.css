@@ -15,7 +15,7 @@ html { height:100%; width:100%; }
 body {
     align-content:center;
     align-items:space-around;
-    background-color:rgba(0, 0, 0, 1);
+    background-color:rgba(0, 0, 0, 0.9);
     display:grid;
     justify-items:center;
     height:100%;
