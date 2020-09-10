@@ -40,21 +40,31 @@ var mainLoop = function() {
 window.addEventListener("load", mainLoop);
 
 function menuScreen() {
+    var height = context.canvas.height;
+    var width = context.canvas.width;
+    var sideEmptySpace = (document.documentElement.clientWidth - width) / 2
+
     var fline = document.getElementById("overlay1");
     var sline = document.getElementById("overlay2");
     var fbutton = document.getElementById("play");
     var sbutton = document.getElementById("credits");
+    var links = document.getElementById("media");
 
-    fline.style.fontSize = context.canvas.width/50 + "px";
-    fline.style.top = context.canvas.height/4.5 + "px";
+    links.style.fontSize = width/45 + "px";
+    links.style.top = height/1.1 + "px";
+    links.style.left = width/1.2 + sideEmptySpace + "px";
 
-    sline.style.fontSize = context.canvas.width/15 + "px";
-    sline.style.top = context.canvas.height/3.5 + "px";
+    fline.style.fontSize = width/50 + "px";
+    fline.style.top = height/4.5 + "px";
+    fline.style.left = width/3 + sideEmptySpace + "px";
 
-    fbutton.style.fontSize = context.canvas.width/50 + "px";
-    fbutton.style.top = context.canvas.height/2.1 + "px";
+    sline.style.fontSize = width/15 + "px";
+    sline.style.top = height/3.5 + "px";
 
-    sbutton.style.fontSize = context.canvas.width/50 + "px";
-    sbutton.style.top = context.canvas.height/1.8 + "px";
+    fbutton.style.fontSize = width/50 + "px";
+    fbutton.style.top = height/2.1 + "px";
+
+    sbutton.style.fontSize = width/50 + "px";
+    sbutton.style.top = height/1.8 + "px";
 
 }

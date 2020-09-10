@@ -9,8 +9,10 @@ var background_image    = new Image();
 background_image.src    = "assets/game-background.png";
 var platform            = new Image();
 platform.src            = "assets/platform.png";
-var scroll              = new Image();
-scroll.src              = "assets/scroll.png";
+var scrollLeft          = new Image();
+scrollLeft.src          = "assets/scrollLeft.png";
+var scrollRight         = new Image();
+scrollRight.src         = "assets/scrollRight.png";
 var directions          = new Image();
 directions.src          = "assets/arrows.png";
 var home                = new Image();
@@ -53,13 +55,15 @@ window.addEventListener("load", function() {
     };
 
     var render = function() {
+        console.log(game.world.player.hasMoved);
+
         display.fill(background_image);
-        display.drawObject(scroll,0,0,128,245,810,410,150,180);
-        display.drawObject(scroll,256,0,128,245,1190,200,150,180);
+        display.drawObject(scrollRight,384,0,128,245,250,380,150,180);
+        display.drawObject(scrollLeft,256,0,128,245,1150,380,140,180);
         display.drawObject(home,0,0,376,244,1500,570,450,300);
         display.drawObject(flower,0,0,232,259,1825,740,50,50);
-        display.showText("My Work",880,400,"rgb(29, 45, 128)","2.5vmin gameover");
-        display.showText("Contact Me",1270,190,"rgb(34, 16, 74)","2.5vmin gameover");
+        display.showText("iFridge",320,370,"rgb(29, 45, 128)","2.5vmin gameover");
+        display.showText("COVID-Filter",1225,370,"rgb(34, 16, 74)","2.5vmin gameover");
         
         var frame = game.world.tile_set.frames[game.world.player.frame_value];
 
@@ -79,9 +83,10 @@ window.addEventListener("load", function() {
                 frame.height * 6);
         }
 
-        display.drawObject(platform,60,0,330,140,700,550,350,110);
-        display.drawObject(platform,100,140,100,50,1250,350,150,70);
-        display.drawObject(platform,200,140,100,50,1100,350,150,70);
+        display.drawObject(platform,60,0,330,140,150,520,350,110);
+        display.drawObject(platform,100,140,100,50,1200,540,150,70);
+        display.drawObject(platform,200,140,100,50,1050,540,150,70);
+        display.drawObject(platform,200,140,150,50,615,300,300,70);
 
         if (!(game.world.player.hasMoved))  {
             display.buffer.globalAlpha = 0.9;
@@ -89,12 +94,12 @@ window.addEventListener("load", function() {
             display.buffer.globalAlpha = 1; 
         }
 
-        if (game.world.player.x > 700 && game.world.player.x < 1050 && game.world.player.y == 450) {
-            display.showText("Press ENTER to see some of my work.", game.world.width / 2, 1000,"black","3.75vmin pixelText");
-        } else if (game.world.player.x > 1100 && game.world.player.x < 1500 && game.world.player.y == 250) {
-            display.showText("Press ENTER to get in touch!", game.world.width / 2, 1000,"black","3.75vmin pixelText");
+        if (game.world.player.x > 150 && game.world.player.x < 350 && game.world.player.y == 420) {
+            display.showText("Grocery Inventory App built at TOHacks.", game.world.width / 2, 1000,"black","3.75vmin pixelText");
+        } else if (game.world.player.x > 950 && game.world.player.x < 1200 && game.world.player.y == 440) {
+            display.showText("Content filtering extension build at Hack the 6ix.", game.world.width / 2, 1000,"black","3.75vmin pixelText");
         } else if (game.world.player.x < 1300) {
-            display.showText("Use the portals to navigate the website!", game.world.width / 2, 1000,"black","3.75vmin pixelText");
+            display.showText("Use the portals to see some of my work!", game.world.width / 2, 1000,"black","3.75vmin pixelText");
         } else if (game.world.player.x > 1300) {
             display.showText("Go home? (Press ENTER)", game.world.width / 2, 1000,"black","3.75vmin pixelText");
         }

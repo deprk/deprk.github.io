@@ -34,7 +34,7 @@ Game.World.prototype = {
     update:function() {
         this.player.updatePosition(this.gravity, this.friction);
         if (this.fade < 0.15) {
-            this.fade += 0.0025;
+            this.fade += 0.005;
         } else {
             this.fade = 1;
             this.player.updateAnimation();
@@ -49,18 +49,23 @@ Game.World.prototype = {
         if (object.y < 0) { object.y = 0; object.velocity_y = 0; object.oldpos = 0; }
         else if (object.y + object.height > this.height - 275) { object.jumping = false; object.y = this.height - object.height - 275; object.velocity_y = 0; }
 
-        if (object.x > 575 && object.x < 900 && object.y >= 450 && object.y_old <= 450) {
-            object.y = 450; 
+        if (object.x > 25 && object.x < 350 && object.y >= 420 && object.y_old <= 420) {
+            object.y = 420; 
             object.velocity_y = 0;
             object.jumping = false;
         }
-        if (object.x > 975 && object.x < 1300 && object.y >= 250 && object.y_old <= 250) {
-            object.y = 250; 
+        if (object.x > 950 && object.x < 1250 && object.y >= 440 && object.y_old <= 440) {
+            object.y = 440; 
             object.velocity_y = 0;
             object.jumping = false;
         }
         if (object.x > 1425 && object.x < 1775 && object.y >= 420 && object.y_old <= 420) {
             object.y = 420; 
+            object.velocity_y = 0;
+            object.jumping = false;
+        }
+        if (object.x > 525 && object.x < 790 && object.y >= 205 && object.y_old <= 205) {
+            object.y = 205;
             object.velocity_y = 0;
             object.jumping = false;
         }
@@ -75,7 +80,7 @@ Game.Player = function(x,y) {
     this.direction_x = 1;
     this.velocity_x = 0;
     this.velocity_y = 0;
-    this.x          = 250;
+    this.x          = 660;
     this.y          = 725;
     this.y_old      = 200;
     this.height     = 80;
@@ -161,7 +166,7 @@ Game.Player.prototype = {
         this.velocity_x *= friction;
         this.velocity_y *= friction;
 
-        if (this.x > 450) {
+        if ((this.x < 510 || this.x > 810) && this.hasMoved == false) {
             this.hasMoved = true;
         }
     }

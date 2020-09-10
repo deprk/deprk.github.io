@@ -10,7 +10,7 @@
 
 * { box-sizing: border-box; margin:0; padding:0; }
 
-html { height:100%; width:100%; }
+html { height:100%; width:100%;}
 
 body {
     align-content: center;
@@ -70,7 +70,22 @@ button:hover:before {
 }
 
 button:hover {
-    color: rgba(255, 255, 255, 0.8); 
+    color: rgba(255, 255, 255, 0.9); 
 }
 
+#media {
+    position: absolute;
+    font-size: 50px;
+}
 
+li {
+    color: black;
+    margin: 7px;
+    display: inline-block;
+}
+a { color: black; }
+
+a:hover { 
+    color: rgba(255, 255, 255, 0.9);
+    transition: .5s;
+ }
