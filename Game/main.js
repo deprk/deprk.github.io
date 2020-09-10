@@ -55,8 +55,6 @@ window.addEventListener("load", function() {
     };
 
     var render = function() {
-        console.log(game.world.player.hasMoved);
-
         display.fill(background_image);
         display.drawObject(scrollRight,384,0,128,245,250,380,150,180);
         display.drawObject(scrollLeft,256,0,128,245,1150,380,140,180);
