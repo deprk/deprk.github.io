@@ -127,7 +127,7 @@ Game.Player.prototype = {
         if (this.x > 25 && this.x < 350 && this.y == 420) {
             window.location.href="https://devpost.com/software/ifridge";
         } else if (this.x > 950 && this.x < 1250 && this.y == 440) {
-            window.location.href="https://devpost.com/software/ifridge";
+            window.location.href="https://devpost.com/software/covid-filter";
         } else if (this.x > 525 && this.x < 790 && this.y == 205) {
             window.location.href="../About/about.html"
         } else if (this.x > 1300) {
