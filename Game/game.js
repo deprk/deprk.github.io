@@ -46,7 +46,6 @@ Game.World.prototype = {
     collideObject:function(object) {
         if (object.x < -132) { object.x = 1800; }
         else if (object.x + object.width > this.width) { object.x = -132 }
-        if (object.y < 0) { object.y = 0; object.velocity_y = 0; object.oldpos = 0; }
         else if (object.y + object.height > this.height - 275) { object.jumping = false; object.y = this.height - object.height - 275; object.velocity_y = 0; }
 
         if (object.x > 25 && object.x < 350 && object.y >= 420 && object.y_old <= 420) {
@@ -125,13 +124,15 @@ Game.Player.prototype = {
     },
 
     navigate: function() {
-        if (this.x > 700 && this.x < 1050 && this.y == 450) {
-            window.location.href="../about/About.html";
-        } else if (this.x > 1100 && this.x < 1500 && this.y == 250) {
-            window.location.href="../contact/Contact.html";
+        if (this.x > 25 && this.x < 350 && this.y == 420) {
+            window.location.href="https://devpost.com/software/ifridge";
+        } else if (this.x > 950 && this.x < 1250 && this.y == 440) {
+            window.location.href="https://devpost.com/software/ifridge";
+        } else if (this.x > 525 && this.x < 790 && this.y == 205) {
+            window.location.href="../About/about.html"
         } else if (this.x > 1300) {
             window.location.href="../index.html";
-        }
+        } 
     },
 
     updateAnimation:function() {

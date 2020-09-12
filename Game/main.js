@@ -17,8 +17,10 @@ var directions          = new Image();
 directions.src          = "assets/arrows.png";
 var home                = new Image();
 home.src                = "assets/home.png";
-var flower              = new Image();
-flower.src              = "assets/flower.png";
+var pirPlant              = new Image();
+pirPlant.src              = "assets/flower.png";
+var flowey              = new Image();
+flowey.src              ="assets/flowey.png";
 
 window.addEventListener("load", function() {
     "use strict";
@@ -59,7 +61,8 @@ window.addEventListener("load", function() {
         display.drawObject(scrollRight,384,0,128,245,250,380,150,180);
         display.drawObject(scrollLeft,256,0,128,245,1150,380,140,180);
         display.drawObject(home,0,0,376,244,1500,570,450,300);
-        display.drawObject(flower,0,0,232,259,1825,740,50,50);
+        display.drawObject(pirPlant,0,0,232,259,1825,740,50,50);
+        display.drawObject(flowey,0,0,512,351,675,175,200,150)
         display.showText("iFridge",320,370,"rgb(29, 45, 128)","2.5vmin gameover");
         display.showText("COVID-Filter",1225,370,"rgb(34, 16, 74)","2.5vmin gameover");
         
@@ -93,11 +96,13 @@ window.addEventListener("load", function() {
         }
 
         if (game.world.player.x > 150 && game.world.player.x < 350 && game.world.player.y == 420) {
-            display.showText("Grocery Inventory App built at TOHacks.", game.world.width / 2, 1000,"black","3.75vmin pixelText");
+            display.showText("Grocery Inventory App built at TOHacks. (Press ENTER)", game.world.width / 2, 1000,"black","3.75vmin pixelText");
         } else if (game.world.player.x > 950 && game.world.player.x < 1200 && game.world.player.y == 440) {
-            display.showText("Content filtering extension build at Hack the 6ix.", game.world.width / 2, 1000,"black","3.75vmin pixelText");
+            display.showText("Content filtering extension built at Hack the 6ix. (Press ENTER)", game.world.width / 2, 1000,"black","3.75vmin pixelText");
+        } else if (game.world.player.x > 525 && game.world.player.x < 800 && game.world.player.y == 205) {
+            display.showText("About me! (ENTER)",game.world.width / 2, 1000,"black","3.75vmin pixelText");
         } else if (game.world.player.x < 1300) {
-            display.showText("Use the portals to see some of my work!", game.world.width / 2, 1000,"black","3.75vmin pixelText");
+            display.showText("Use the portals to navigate!", game.world.width / 2, 1000,"black","3.75vmin pixelText");
         } else if (game.world.player.x > 1300) {
             display.showText("Go home? (Press ENTER)", game.world.width / 2, 1000,"black","3.75vmin pixelText");
         }
