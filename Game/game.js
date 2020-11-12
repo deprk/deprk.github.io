@@ -129,7 +129,7 @@ Game.Player.prototype = {
         } else if (this.x > 950 && this.x < 1250 && this.y == 440) {
             window.location.href="https://devpost.com/software/covid-filter";
         } else if (this.x > 525 && this.x < 790 && this.y == 205) {
-            window.location.href="../About/about.html"
+            window.location.href="../About/About.html"
         } else if (this.x > 1300) {
             window.location.href="../index.html";
         } 
