@@ -1,0 +1,92 @@
+@font-face {
+    src: url(../assets/pokemon.ttf);
+    font-family: pokemon;
+}
+
+@font-face {
+    src: url(../../Game/assets/joystix.ttf);
+    font-family: gameover;
+}
+
+body {
+    position: relative;
+}
+
+#aboutpage {
+    display: flex;
+    justify-content: center;
+}
+.aboutwhole {
+    position: absolute;
+    top: 10%;
+}
+.aboutsection {
+    width: 60%;
+    margin: 0 auto;
+    background-color: aliceblue;
+    border: 0.5vw solid #cae4db;
+    border-radius: 25px;
+}
+
+.dp {
+    margin-top: 2%;
+    display: block;
+    border-radius: 50%;
+    max-width: 15%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.dpheader {
+    text-align: center;
+    font-family: 'gameover';
+    font-size: 1.5vw;
+    padding-top: 2vmin;
+    padding-bottom: 4vmin;
+}
+
+.abouttext {
+    text-align: center;
+    font-family: 'pokemon';
+    font-size: 0.8vw;
+    font-weight: 600;
+    padding-left: 5vw;
+    padding-right: 5vw;
+}
+
+.s1, .s2 {
+    padding-bottom: 3vmin;
+}
+
+.s1, .s2, .s3 {
+    line-height: 2.25vh;
+}
+
+#uwaterloo {
+    color: #CFB53B;
+}
+
+.music {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-top: 1.5vmin;
+    margin-bottom: 2%;
+}
+
+iframe {
+    display:block;
+}
+#backbutton {
+    display: flex;
+    justify-content: center;
+    margin-top: 3.5vh;
+}
+#button {
+    background-color: #cae4db;
+    border: none;
+    font-family: gameover;
+    font-size: 1vw;
+    padding: 1vh 2vw;
+    border-radius: 25px;
+}
