@@ -43,6 +43,7 @@ function menuScreen() {
     var height = context.canvas.height;
     var width = context.canvas.width;
     var sideEmptySpace = (document.documentElement.clientWidth - width) / 2
+    var topEmptySpace = (document.documentElement.clientHeight - height) / 2
 
     var fline = document.getElementById("overlay1");
     var sline = document.getElementById("overlay2");
@@ -51,20 +52,20 @@ function menuScreen() {
     var links = document.getElementById("media");
 
     links.style.fontSize = width/45 + "px";
-    links.style.top = height/1.1 + "px";
-    links.style.left = width/1.2 + sideEmptySpace + "px";
+    links.style.top = height/1.1 + topEmptySpace + "px";
+    links.style.left = width/1.25 + sideEmptySpace + "px";
 
     fline.style.fontSize = width/50 + "px";
-    fline.style.top = height/4.5 + "px";
+    fline.style.top = height/4.5 + topEmptySpace + "px";
     fline.style.left = width/3 + sideEmptySpace + "px";
 
     sline.style.fontSize = width/15 + "px";
-    sline.style.top = height/3.5 + "px";
+    sline.style.top = height/3.5 + topEmptySpace + "px";
 
     fbutton.style.fontSize = width/50 + "px";
-    fbutton.style.top = height/2.1 + "px";
+    fbutton.style.top = height/2.1 + topEmptySpace + "px";
 
     sbutton.style.fontSize = width/50 + "px";
-    sbutton.style.top = height/1.8 + "px";
+    sbutton.style.top = height/1.8 + topEmptySpace + "px";
 
 }

@@ -23,11 +23,6 @@ body {
     position: relative;
 }
 
-
-canvas { 
-    position: absolute;
-}
-
 #overlay1 {
     position: absolute;
     font-family: 'pixelText'
@@ -42,12 +37,8 @@ canvas {
     font-family: 'gameover';
     background-color: transparent;
     border: none;
-	margin: 30px auto 0;
-	display: block;
-	font-size: 20px;
-	outline: none;
-	position: absolute;
-	padding: 10px;
+    padding: 10px;
+    outline: none;
 }
 
 button:before {
@@ -75,12 +66,11 @@ button:hover {
 
 #media {
     position: absolute;
-    font-size: 50px;
 }
 
 li {
     color: black;
-    margin: 7px;
+    margin: 0.75vw;
     display: inline-block;
 }
 a { color: black; }
