@@ -17,7 +17,7 @@ function MainHeader(props) {
     React.createElement(
       "div",
       { className: "s1" },
-      "My name is George and I study Computer Science at the ",
+      "My name is George and I'm a junior studying Computer Science at the ",
       React.createElement(
         "span",
         { id: "uwaterloo" },
