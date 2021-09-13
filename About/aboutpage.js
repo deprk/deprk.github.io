@@ -29,7 +29,7 @@ function MainHeader(props) {
     React.createElement(
       "div",
       { className: "s2" },
-      "In addition to my personal projects, I've completed internships as a Full-Stack Web Developer in Fintech and as a QA Engineer at the 2nd fastest growing software company."
+      "In addition to my personal projects, I've completed internships as a Full-Stack Web Developer at Paralucent working with financial software and as a QA Engineer at Veeva Systems."
     ),
     React.createElement(
       "div",

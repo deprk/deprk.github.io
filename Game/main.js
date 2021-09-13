@@ -17,10 +17,12 @@ var directions          = new Image();
 directions.src          = "assets/arrows.png";
 var home                = new Image();
 home.src                = "assets/home.png";
-var pirPlant              = new Image();
-pirPlant.src              = "assets/flower.png";
+var pirPlant            = new Image();
+pirPlant.src            = "assets/flower.png";
 var flowey              = new Image();
-flowey.src              ="assets/flowey.png";
+flowey.src              = "assets/flowey.png";
+var scrollFlat          = new Image();
+scrollFlat.src          = "assets/flatPortal.png"
 
 window.addEventListener("load", function() {
     "use strict";
@@ -60,12 +62,15 @@ window.addEventListener("load", function() {
         display.fill(background_image);
         display.drawObject(scrollRight,384,0,128,245,250,380,150,180);
         display.drawObject(scrollLeft,256,0,128,245,1150,380,140,180);
+        display.drawObject(scrollFlat,0,0,629,397,600,140,350,200);
         display.drawObject(home,0,0,376,244,1500,570,450,300);
-        display.drawObject(pirPlant,0,0,232,259,1825,740,50,50);
-        display.drawObject(flowey,0,0,512,351,675,175,200,150)
+        display.drawObject(pirPlant,0,0,232,259,1815,740,50,50);
+        display.drawObject(flowey,0,0,512,351,1850,740,50,50);
+    
         display.showText("iFridge",320,370,"rgb(29, 45, 128)","2.5vmin gameover");
         display.showText("COVID-Filter",1225,370,"rgb(34, 16, 74)","2.5vmin gameover");
-        
+        display.showText("Study Buddies",775,140,"#14B62F","2.5vmin gameover");
+
         var frame = game.world.tile_set.frames[game.world.player.frame_value];
 
         if (game.world.player.direction_x > 0) {
@@ -100,11 +105,11 @@ window.addEventListener("load", function() {
         } else if (game.world.player.x > 950 && game.world.player.x < 1200 && game.world.player.y == 440) {
             display.showText("Content filtering extension built at Hack the 6ix. (Press ENTER)", game.world.width / 2, 1000,"black","3.75vmin pixelText");
         } else if (game.world.player.x > 525 && game.world.player.x < 800 && game.world.player.y == 205) {
-            display.showText("About me! (ENTER)",game.world.width / 2, 1000,"black","3.75vmin pixelText");
+            display.showText("Video Game helping young students manage deadlines. (Press ENTER)",game.world.width / 2, 1000,"black","3.75vmin pixelText");
         } else if (game.world.player.x < 1300) {
             display.showText("Use the portals to navigate!", game.world.width / 2, 1000,"black","3.75vmin pixelText");
         } else if (game.world.player.x > 1300) {
-            display.showText("Go home? (Press ENTER)", game.world.width / 2, 1000,"black","3.75vmin pixelText");
+            display.showText("About Me (Press ENTER)", game.world.width / 2, 1000,"black","3.75vmin pixelText");
         }
 
         display.render(game.world.fade);
